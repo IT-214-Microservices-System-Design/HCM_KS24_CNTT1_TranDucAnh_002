@@ -1,6 +1,6 @@
 spring:
   application:
-    name: gateway-service
+    name: api-gateway
   config:
     import: optional:configserver:http://localhost:8888
   cloud:
@@ -10,11 +10,11 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
-        - id: genner-service
-          uri: lb://genner-service
+        - id: genre-service
+          uri: lb://genre-service
           predicates:
-            - Path=/api/greeting/**, /api/genner/**
-        - id: moive-route
-          uri: lb://moive-service
+            - Path=/api/genres/**
+        - id: movie-service
+          uri: lb://movie-service
           predicates:
-            - Path=/api/moive/**
+            - Path=/api/movies/**
