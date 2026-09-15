@@ -10,8 +10,8 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
-        - id: genre-service
-          uri: lb://genre-service
+        - id: gener-service
+          uri: lb://gener-service
           predicates:
             - Path=/api/genres/**
         - id: movie-service
